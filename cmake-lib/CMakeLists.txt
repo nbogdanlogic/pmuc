@@ -7,6 +7,7 @@ if(UNIX)
 endif()
 
 # Add OpenGL dependencies
+set (OpenGL_GL_PREFERENCE LEGACY)
 find_package(OpenGL REQUIRED)
 
 add_library(${PROJECT_NAME} SHARED	../src/api/rvmcolorhelper.cpp
