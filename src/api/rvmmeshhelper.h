@@ -29,6 +29,8 @@
 #include "vector3f.h"
 #include "rvmprimitive.h"
 
+#include "lib_export.h"
+
 struct Mesh {
  std::vector<unsigned long>  positionIndex;
  std::vector<unsigned long>  normalIndex;
@@ -54,7 +56,8 @@ enum PrimitiveTypes {
 
 typedef std::pair<Vector3F, Vector3F> Vertex;
 
-class RVMMeshHelper2
+
+class DLL_PMUC_EXPORT RVMMeshHelper2
 {
     public:
         RVMMeshHelper2();

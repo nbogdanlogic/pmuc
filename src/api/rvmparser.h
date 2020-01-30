@@ -28,6 +28,7 @@
 #include <array>
 
 #include "vector3f.h"
+#include "lib_export.h"
 
 class RVMReader;
 
@@ -43,7 +44,7 @@ class RVMReader;
  * Two methods are provided to allow tweeking the output:
  * @see setObjectName @see setForcedColor
  */
-class RVMParser
+class DLL_PMUC_EXPORT RVMParser
 {
     public:
         /**

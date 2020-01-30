@@ -22,9 +22,11 @@
 #ifndef RVMCOLORHELPER_H
 #define RVMCOLORHELPER_H
 
+#include "lib_export.h"
+
 #include <vector>
 
-class RVMColorHelper
+class DLL_PMUC_EXPORT RVMColorHelper
 {
     public:
         RVMColorHelper();

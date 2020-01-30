@@ -26,6 +26,8 @@
 #include <vector>
 #include <array>
 
+#include "lib_export.h"
+
 #include "vector3f.h"
 #include "rvmprimitive.h"
 
@@ -40,7 +42,7 @@ typedef std::vector<std::vector<std::vector<PositionNormalTuple> > > FGroup;
  *
  * @see X3DConverter @see DummyReader
  */
-class RVMReader
+class DLL_PMUC_EXPORT RVMReader
 {
     public:
         /**

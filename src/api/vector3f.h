@@ -22,6 +22,8 @@
 #ifndef Vector3F_H
 #define Vector3F_H
 
+#include "lib_export.h"
+
 #include <vector>
 #include <ostream>
 #include <cmath>
@@ -31,9 +33,9 @@
  *
  * Optimized for quick allocation. Allows the use of operators such as -, +, *...
  */
-class Vector3F
+class DLL_PMUC_EXPORT Vector3F
 {
-    public:
+public:
         Vector3F();
         Vector3F(const float& x, const float& y, const float& z);
         Vector3F(const Vector3F& v);
