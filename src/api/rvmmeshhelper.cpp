@@ -65,7 +65,7 @@ static const unsigned long cube_index[] = {0,  1,  2,  2,  3,  0,  4,  7,  5,  5
 
 void CALLBACK tessVertexData(void* vertex_data, void* polygon_data) {
   Mesh* userData = (Mesh*)polygon_data;
-  userData->positionIndex.push_back((unsigned long)vertex_data);
+  userData->positionIndex.push_back(reinterpret_cast<unsigned long>(vertex_data));
 }
 void CALLBACK tessEdgeFlag(GLboolean flag, void* polygon_data) {}
 

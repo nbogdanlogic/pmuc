@@ -1,6 +1,7 @@
 project(PMUC)
 cmake_minimum_required(VERSION 2.8)
 cmake_policy(SET CMP0074 NEW)
+cmake_policy(SET CMP0072 NEW)
 
 # Set C++11 flags to makesome function work
 if(UNIX)
