@@ -1,6 +1,5 @@
 project(pmuc)
 cmake_minimum_required(VERSION 2.8)
-cmake_policy(SET CMP0074 NEW)
 
 SET(CMAKE_MODULE_PATH "${pmuc_SOURCE_DIR}/CMakeModules;${CMAKE_MODULE_PATH}")
 
