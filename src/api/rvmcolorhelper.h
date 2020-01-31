@@ -29,14 +29,14 @@
 class RVMColorHelper
 {
     public:
-        DLL_PMUC_EXPORT RVMColorHelper();
+        DLL_RVM_EXPORT RVMColorHelper();
 
         /**
          * @brief Simple static method to return rgb floats from a PDMS color index. Use the conversion values from Navisworks
          * @param index the PDMS material index
          * @return RGB floats between 0. and 1.
          */
-        DLL_PMUC_EXPORT static const std::vector<float> color(unsigned char index);
+        DLL_RVM_EXPORT static const std::vector<float> color(unsigned char index);
 };
 
 #endif // RVMCOLORHELPER_H
