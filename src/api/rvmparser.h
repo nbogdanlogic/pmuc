@@ -51,7 +51,7 @@ class RVMParser
          * @brief Constructs a parser ready to send data to the provided RVMReader
          * @param reader The reader object that will receive the data.
          */
-        DLL_RVM_EXPORT RVMParser(RVMReader& reader);
+        DLL_PMUC_EXPORT RVMParser(RVMReader& reader);
 
         /**
          * @brief Reads from a file a parse its content.
@@ -59,110 +59,110 @@ class RVMParser
          *
          * @return true if the parsing was a success.
          */
-        DLL_RVM_EXPORT bool readFile(const std::string& filename, bool ignoreAttributes);
+        DLL_PMUC_EXPORT bool readFile(const std::string& filename, bool ignoreAttributes);
         /**
          * @brief Reads from a series of files.
          * @param filenames a vector of filenames
          *
          * @return true if the parsing was a success.
          */
-        DLL_RVM_EXPORT bool readFiles(const std::vector<std::string>& filenames, const std::string& name, bool ignoreAttributes);
+        DLL_PMUC_EXPORT bool readFiles(const std::vector<std::string>& filenames, const std::string& name, bool ignoreAttributes);
         /**
          * @brief Reads from a character buffer.
          * @param buffer the character buffer containing RVM data.
          * @return true if the parsing was a success.
          */
-        DLL_RVM_EXPORT bool readBuffer(const char* buffer);
+        DLL_PMUC_EXPORT bool readBuffer(const char* buffer);
         /**
          * @brief Reads RVM data from an input stream
          * @param is the input stream of RVM data.
          * @return true if the parsing was a success.
          */
-        DLL_RVM_EXPORT bool readStream(std::istream& is);
+        DLL_PMUC_EXPORT bool readStream(std::istream& is);
 
         /**
          * @brief Allow to filter the RVM data to one named object
          * @param name the name of the object to extract.
          */
-        DLL_RVM_EXPORT void setObjectName(const std::string& name) { m_objectName = name; }
+        DLL_PMUC_EXPORT void setObjectName(const std::string& name) { m_objectName = name; }
         /**
          * @brief Force the color of all extracted objects
          * @param index a PDMS color index
          */
-        DLL_RVM_EXPORT void setForcedColor(const int index) { m_forcedColor = index; }
-        DLL_RVM_EXPORT void setScale(const float scale) { m_scale = scale; }
+        DLL_PMUC_EXPORT void setForcedColor(const int index) { m_forcedColor = index; }
+        DLL_PMUC_EXPORT void setScale(const float scale) { m_scale = scale; }
 
         /**
          * @brief In case of error, returns the last error that occured.
          * @return a string describing the error.
          */
-        DLL_RVM_EXPORT const std::string lastError();
+        DLL_PMUC_EXPORT const std::string lastError();
 
         /**
          * @brief Statistics of the parsing: number of groups
          * @return the number of groups found in the source.
          */
-        DLL_RVM_EXPORT const int& nbGroups() { return m_nbGroups; }
+        DLL_PMUC_EXPORT const int& nbGroups() { return m_nbGroups; }
         /**
          * @brief Statistics of the parsing: number of pyramids
          * @return the number of pyramids found in the source.
          */
-        DLL_RVM_EXPORT const int& nbPyramids() { return m_nbPyramids; }
+        DLL_PMUC_EXPORT const int& nbPyramids() { return m_nbPyramids; }
         /**
          * @brief Statistics of the parsing: number of boxes
          * @return the number of boxes found in the source.
          */
-        DLL_RVM_EXPORT const int& nbBoxes() { return m_nbBoxes; }
+        DLL_PMUC_EXPORT const int& nbBoxes() { return m_nbBoxes; }
         /**
          * @brief Statistics of the parsing: number of rectangular toruses
          * @return the number of rectangular toruses found in the source.
          */
-        DLL_RVM_EXPORT const int& nbRectangularToruses() { return m_nbRectangularToruses; }
+        DLL_PMUC_EXPORT const int& nbRectangularToruses() { return m_nbRectangularToruses; }
         /**
          * @brief Statistics of the parsing: number of circular toruses
          * @return the number of circular toruses found in the source.
          */
-        DLL_RVM_EXPORT const int& nbCircularToruses() { return m_nbCircularToruses; }
+        DLL_PMUC_EXPORT const int& nbCircularToruses() { return m_nbCircularToruses; }
         /**
          * @brief Statistics of the parsing: number of elliptical dishes
          * @return the number of elliptical dishes found in the source.
          */
-        DLL_RVM_EXPORT const int& nbEllipticalDishes() { return m_nbEllipticalDishes; }
+        DLL_PMUC_EXPORT const int& nbEllipticalDishes() { return m_nbEllipticalDishes; }
         /**
          * @brief Statistics of the parsing: number of spherical dishes
          * @return the number of spherical dishes found in the source.
          */
-        DLL_RVM_EXPORT const int& nbSphericalDishes() { return m_nbSphericalDishes; }
+        DLL_PMUC_EXPORT const int& nbSphericalDishes() { return m_nbSphericalDishes; }
         /**
          * @brief Statistics of the parsing: number of snouts
          * @return the number of snouts found in the source.
          */
-        DLL_RVM_EXPORT const int& nbSnouts() { return m_nbSnouts; }
+        DLL_PMUC_EXPORT const int& nbSnouts() { return m_nbSnouts; }
         /**
          * @brief Statistics of the parsing: number of cylinders
          * @return the number of cylinders found in the source.
          */
-        DLL_RVM_EXPORT const int& nbCylinders() { return m_nbCylinders; }
+        DLL_PMUC_EXPORT const int& nbCylinders() { return m_nbCylinders; }
         /**
          * @brief Statistics of the parsing: number of spheres
          * @return the number of spheres found in the source.
          */
-        DLL_RVM_EXPORT const int& nbSpheres() { return m_nbSpheres; }
+        DLL_PMUC_EXPORT const int& nbSpheres() { return m_nbSpheres; }
         /**
          * @brief Statistics of the parsing: number of lines
          * @return the number of lines found in the source.
          */
-        DLL_RVM_EXPORT const int& nbLines() { return m_nbLines; }
+        DLL_PMUC_EXPORT const int& nbLines() { return m_nbLines; }
         /**
          * @brief Statistics of the parsing: number of facet groups
          * @return the number of facet groups found in the source.
          */
-        DLL_RVM_EXPORT const int& nbFacetGroups() { return m_nbFacetGroups; }
+        DLL_PMUC_EXPORT const int& nbFacetGroups() { return m_nbFacetGroups; }
         /**
          * @brief Statistics of the parsing: number of attributes
          * @return the number of attributes found in the source.
          */
-        DLL_RVM_EXPORT const long& nbAttributes() { return m_attributes; }
+        DLL_PMUC_EXPORT const long& nbAttributes() { return m_attributes; }
 
     private:
         bool readGroup(std::istream& is);

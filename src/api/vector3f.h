@@ -36,10 +36,10 @@
 class Vector3F
 {
 public:
-        DLL_RVM_EXPORT Vector3F();
-        DLL_RVM_EXPORT Vector3F(const float& x, const float& y, const float& z);
-        DLL_RVM_EXPORT Vector3F(const Vector3F& v);
-        DLL_RVM_EXPORT Vector3F(const std::vector<float>& v);
+        DLL_PMUC_EXPORT Vector3F();
+        DLL_PMUC_EXPORT Vector3F(const float& x, const float& y, const float& z);
+        DLL_PMUC_EXPORT Vector3F(const Vector3F& v);
+        DLL_PMUC_EXPORT Vector3F(const std::vector<float>& v);
 
         inline float& operator[](int i) {
             return m_values[i];
@@ -66,9 +66,9 @@ public:
             return m_values[2];
         }
 
-        DLL_RVM_EXPORT float squaredNorm() const { return x() * x() + y() * y() + z() * z(); }
+        DLL_PMUC_EXPORT float squaredNorm() const { return x() * x() + y() * y() + z() * z(); }
 
-        DLL_RVM_EXPORT float normalize() {
+        DLL_PMUC_EXPORT float normalize() {
             const float n = squaredNorm();
             if(n != 0) {
                 float mag = 1.0f / sqrt(n);
@@ -80,29 +80,29 @@ public:
             return 0.f;
         }
 
-        DLL_RVM_EXPORT Vector3F cross(const Vector3F& y);
+        DLL_PMUC_EXPORT Vector3F cross(const Vector3F& y);
 
         inline bool equals(const Vector3F& v) const {
             return (m_values[0] == v[0]) && (m_values[1] == v[1]) && (m_values[2] == v[2]);
         }
 
-        DLL_RVM_EXPORT Vector3F& operator*=(float k) {
+        DLL_PMUC_EXPORT Vector3F& operator*=(float k) {
             m_values[0] *= k; m_values[1] *= k; m_values[2] *= k;
             return *this;
         }
 
-        DLL_RVM_EXPORT friend Vector3F operator-(const std::vector<float>& p1, const std::vector<float>& p2);
-        DLL_RVM_EXPORT friend Vector3F operator-(const Vector3F& p1, const Vector3F& p2);
-        DLL_RVM_EXPORT friend Vector3F operator+(const Vector3F& p1, const Vector3F& p2);
-        DLL_RVM_EXPORT friend float operator*(const Vector3F& p1, const Vector3F& p2);
-        DLL_RVM_EXPORT friend Vector3F operator*(const Vector3F& v, float f);
-        DLL_RVM_EXPORT friend std::ostream& operator<<(std::ostream& out, const Vector3F& vec);
+        DLL_PMUC_EXPORT friend Vector3F operator-(const std::vector<float>& p1, const std::vector<float>& p2);
+        DLL_PMUC_EXPORT friend Vector3F operator-(const Vector3F& p1, const Vector3F& p2);
+        DLL_PMUC_EXPORT friend Vector3F operator+(const Vector3F& p1, const Vector3F& p2);
+        DLL_PMUC_EXPORT friend float operator*(const Vector3F& p1, const Vector3F& p2);
+        DLL_PMUC_EXPORT friend Vector3F operator*(const Vector3F& v, float f);
+        DLL_PMUC_EXPORT friend std::ostream& operator<<(std::ostream& out, const Vector3F& vec);
 
-        DLL_RVM_EXPORT friend bool operator!=(const Vector3F& a, const Vector3F& b) {
+        DLL_PMUC_EXPORT friend bool operator!=(const Vector3F& a, const Vector3F& b) {
             return !(a==b);
         };
 
-        DLL_RVM_EXPORT friend bool operator==(const Vector3F& a, const Vector3F& b) {
+        DLL_PMUC_EXPORT friend bool operator==(const Vector3F& a, const Vector3F& b) {
            const float epsilon = 1.0E-10f;
            return (a-b).squaredNorm() < epsilon;
         }

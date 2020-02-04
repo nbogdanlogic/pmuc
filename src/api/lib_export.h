@@ -1,11 +1,11 @@
 #pragma once
 
 #if defined(_WIN32)
-	#if defined(RVM_EXPORTS)
-		#define DLL_RVM_EXPORT __declspec(dllexport)
+	#if defined(PMUC_EXPORTS)
+		#define DLL_PMUC_EXPORT __declspec(dllexport)
 	#else  // !BUILDING_DLL
-		#define DLL_RVM_EXPORT __declspec(dllimport)
+		#define DLL_PMUC_EXPORT __declspec(dllimport)
 	#endif  // BUILDING_DLL
 #else // / UNIX /
-	#define DLL_RVM_EXPORT
+		#define DLL_PMUC_EXPORT
 #endif // 

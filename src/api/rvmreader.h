@@ -48,21 +48,21 @@ class RVMReader
         /**
          * @brief Default constructor. Initializes variables.
          */
-        DLL_RVM_EXPORT RVMReader();
+        DLL_PMUC_EXPORT RVMReader();
         
         /**
          * @brief Pure virtual destructor
          */
-        DLL_RVM_EXPORT virtual ~RVMReader() = 0;
+        DLL_PMUC_EXPORT virtual ~RVMReader() = 0;
 
         /**
          * @brief Signals the start of the document.
          */
-        DLL_RVM_EXPORT virtual void startDocument() = 0;
+        DLL_PMUC_EXPORT virtual void startDocument() = 0;
         /**
          * @brief Signals the end of the document.
          */
-        DLL_RVM_EXPORT virtual void endDocument() = 0;
+        DLL_PMUC_EXPORT virtual void endDocument() = 0;
 
         /**
          * @brief Called when the header of the RVM file is found
@@ -72,7 +72,7 @@ class RVMReader
          * @param user the login of the user that created the data.
          * @param encoding only in version 2 files, string encoding.
          */
-        DLL_RVM_EXPORT virtual void startHeader(const std::string& banner,
+        DLL_PMUC_EXPORT virtual void startHeader(const std::string& banner,
                                                  const std::string& fileNote,
                                                  const std::string& date,
                                                  const std::string& user,
@@ -80,18 +80,18 @@ class RVMReader
         /**
          * @brief Called at the end of the header.
          */
-        DLL_RVM_EXPORT virtual void endHeader() = 0;
+        DLL_PMUC_EXPORT virtual void endHeader() = 0;
 
         /**
          * @brief Called at the start of the model
          * @param projectName the name of the project
          * @param name the name of the model.
          */
-        DLL_RVM_EXPORT virtual void startModel(const std::string& projectName, const std::string& name) = 0;
+        DLL_PMUC_EXPORT virtual void startModel(const std::string& projectName, const std::string& name) = 0;
         /**
          * @brief Called at the end of the model.
          */
-        DLL_RVM_EXPORT virtual void endModel() = 0;
+        DLL_PMUC_EXPORT virtual void endModel() = 0;
 
         /**
          * @brief Called at the start of a RVM group
@@ -100,33 +100,33 @@ class RVMReader
          * @param materialId the material to use in the form of a PDMS color index.
          * @see RVMColorHelper
          */
-        DLL_RVM_EXPORT virtual void startGroup(const std::string& name,
+        DLL_PMUC_EXPORT virtual void startGroup(const std::string& name,
                                                 const Vector3F& translation,
                                                 const int& materialId) = 0;
         /**
          * @brief Called at the end of a group.
          */
-        DLL_RVM_EXPORT virtual void endGroup() = 0;
+        DLL_PMUC_EXPORT virtual void endGroup() = 0;
 
         /**
          * @brief Called if attributes are found for an group.
          */
-        DLL_RVM_EXPORT virtual void startMetaData() = 0;
+        DLL_PMUC_EXPORT virtual void startMetaData() = 0;
         /**
          * @brief Called at the end of the attributes.
          */
-        DLL_RVM_EXPORT virtual void endMetaData() = 0;
+        DLL_PMUC_EXPORT virtual void endMetaData() = 0;
 
         /**
          * @brief Called for each key/value attribute pair
          * @param name the name of the attribute.
          * @param value its value.
          */
-        DLL_RVM_EXPORT virtual void startMetaDataPair(const std::string& name, const std::string& value) = 0;
+        DLL_PMUC_EXPORT virtual void startMetaDataPair(const std::string& name, const std::string& value) = 0;
         /**
          * @brief Called at the end of an attribute.
          */
-        DLL_RVM_EXPORT virtual void endMetaDataPair() = 0;
+        DLL_PMUC_EXPORT virtual void endMetaDataPair() = 0;
 
         /**
          * @brief Describes a pyramid in a group
@@ -134,7 +134,7 @@ class RVMReader
          * @param pyramid
          * @see RVMMeshHelper::makePyramid
          */
-        DLL_RVM_EXPORT virtual void createPyramid(const std::array<float, 12>& matrix,
+        DLL_PMUC_EXPORT virtual void createPyramid(const std::array<float, 12>& matrix,
                                                    const Primitives::Pyramid& pyramid) = 0;
 
         /**
@@ -143,7 +143,7 @@ class RVMReader
          * @param len
          * @see RVMMeshHelper::makeBox
          */
-        DLL_RVM_EXPORT virtual void createBox(const std::array<float, 12>& matrix, const Primitives::Box& box) = 0;
+        DLL_PMUC_EXPORT virtual void createBox(const std::array<float, 12>& matrix, const Primitives::Box& box) = 0;
 
         /**
          * @brief Describes a rectangular torus
@@ -151,7 +151,7 @@ class RVMReader
          * @param rTorus
          * @see RVMMeshHelper::makeRectangularTorus
          */
-        DLL_RVM_EXPORT virtual void createRectangularTorus(const std::array<float, 12>& matrix,
+        DLL_PMUC_EXPORT virtual void createRectangularTorus(const std::array<float, 12>& matrix,
                                                             const Primitives::RectangularTorus& rTorus) = 0;
 
         /**
@@ -160,7 +160,7 @@ class RVMReader
          * @param cTorus
          * @see RVMMeshHelper::makeCircularTorus
          */
-        DLL_RVM_EXPORT virtual void createCircularTorus(const std::array<float, 12>& matrix,
+        DLL_PMUC_EXPORT virtual void createCircularTorus(const std::array<float, 12>& matrix,
                                                          const Primitives::CircularTorus& cTorus) = 0;
 
         /**
@@ -169,7 +169,7 @@ class RVMReader
          * @param eDish
          * @see RVMMeshHelper::makeEllipticalDish
          */
-        DLL_RVM_EXPORT virtual void createEllipticalDish(const std::array<float, 12>& matrix,
+        DLL_PMUC_EXPORT virtual void createEllipticalDish(const std::array<float, 12>& matrix,
                                                           const Primitives::EllipticalDish& eDish) = 0;
 
         /**
@@ -178,7 +178,7 @@ class RVMReader
          * @param sDish
          * @see RVMMeshHelper::makeSphericalDish
          */
-        DLL_RVM_EXPORT virtual void createSphericalDish(const std::array<float, 12>& matrix,
+        DLL_PMUC_EXPORT virtual void createSphericalDish(const std::array<float, 12>& matrix,
                                                          const Primitives::SphericalDish& sDish) = 0;
 
         /**
@@ -187,7 +187,7 @@ class RVMReader
          * @param snout
          * @see RVMMeshHelper::makeSnout
          */
-        DLL_RVM_EXPORT virtual void createSnout(const std::array<float, 12>& matrix,
+        DLL_PMUC_EXPORT virtual void createSnout(const std::array<float, 12>& matrix,
                                                  const Primitives::Snout& snout) = 0;
 
         /**
@@ -196,7 +196,7 @@ class RVMReader
          * @param cylinder
          * @see RVMMeshHelper::makeCylinder
          */
-        DLL_RVM_EXPORT virtual void createCylinder(const std::array<float, 12>& matrix,
+        DLL_PMUC_EXPORT virtual void createCylinder(const std::array<float, 12>& matrix,
                                                     const Primitives::Cylinder& cylinder) = 0;
 
         /**
@@ -205,7 +205,7 @@ class RVMReader
          * @param sphere
          * @see RVMMeshHelper::makeSphere
          */
-        DLL_RVM_EXPORT virtual void createSphere(const std::array<float, 12>& matrix,
+        DLL_PMUC_EXPORT virtual void createSphere(const std::array<float, 12>& matrix,
                                                   const Primitives::Sphere& sphere) = 0;
 
         /**
@@ -214,7 +214,7 @@ class RVMReader
          * @param startx
          * @param endx
          */
-        DLL_RVM_EXPORT virtual void createLine(const std::array<float, 12>& matrix,
+        DLL_PMUC_EXPORT virtual void createLine(const std::array<float, 12>& matrix,
                                                 const float& startx,
                                                 const float& endx) = 0;
 
@@ -227,7 +227,7 @@ class RVMReader
          * @param matrix
          * @param vertexes
          */
-        DLL_RVM_EXPORT virtual void createFacetGroup(const std::array<float, 12>& matrix,
+        DLL_PMUC_EXPORT virtual void createFacetGroup(const std::array<float, 12>& matrix,
                                      const FGroup& vertexes) = 0;
 
         /**
@@ -236,29 +236,29 @@ class RVMReader
          * @param index - The index of the entry in the color map.
          * @param color - The new color values to be set.
          */
-        DLL_RVM_EXPORT virtual void updateColorPalette(std::uint32_t index, const std::array<std::uint8_t, 4>& color) {
+        DLL_PMUC_EXPORT virtual void updateColorPalette(std::uint32_t index, const std::array<std::uint8_t, 4>& color) {
         }
 
         /**
          * @brief Sets the maximum size for a side of a primitive when tesselating.
          * @param size
          */
-        DLL_RVM_EXPORT void setMaxSideSize(float size) { m_maxSideSize = size; }
+        DLL_PMUC_EXPORT void setMaxSideSize(float size) { m_maxSideSize = size; }
         /**
          * @brief Sets the minimum number of sides of a tesselated primitive.
          * @param number
          */
-        DLL_RVM_EXPORT void setMinSides(int number) { m_minSides = number; }
+        DLL_PMUC_EXPORT void setMinSides(int number) { m_minSides = number; }
         /**
          * @brief Sets if the user wants the data to be split with a file for each group.
          * @param split
          */
-        DLL_RVM_EXPORT void setSplit(bool split) { m_split = split; }
+        DLL_PMUC_EXPORT void setSplit(bool split) { m_split = split; }
         /**
          * @brief Sets if the reader should use native primitives instead of tesselating.
          * @param primitives
          */
-        DLL_RVM_EXPORT void setUsePrimitives(bool primitives) { m_primitives = primitives; }
+        DLL_PMUC_EXPORT void setUsePrimitives(bool primitives) { m_primitives = primitives; }
 
     protected:
         int m_minSides;
