@@ -20,11 +20,19 @@ add_library(${PROJECT_NAME} SHARED	../src/api/rvmcolorhelper.cpp
 set_target_properties(${PROJECT_NAME} PROPERTIES PUBLIC_HEADER "../src/api/lib_export.h;../src/api/rvmcolorhelper.h;../src/api/rvmmeshhelper.h;../src/api/rvmparser.h;../src/api/rvmprimitive.h;../src/api/rvmreader.h;../src/api/vector3f.h"
 )
 
+set_target_properties(${PROJECT_NAME} PROPERTIES LIBRARY libd)
+
 install(TARGETS ${PROJECT_NAME}
-        LIBRARY DESTINATION lib
-        PUBLIC_HEADER DESTINATION include
-)
-# install(TARGETS ${PROJECT_NAME} PUBLIC_HEADER DESTINATION include)
+	CONFIGURATIONS Debug
+        RUNTIME DESTINATION bind
+	ARCHIVE DESTINATION libd
+        PUBLIC_HEADER DESTINATION include)
+
+install(TARGETS ${PROJECT_NAME}
+        CONFIGURATIONS Release
+        RUNTIME DESTINATION bin
+        ARCHIVE DESTINATION lib
+	PUBLIC_HEADER DESTINATION include)
 
 # Include OpenGL lib
 target_link_libraries(${PROJECT_NAME} ${OPENGL_LIBRARIES})
