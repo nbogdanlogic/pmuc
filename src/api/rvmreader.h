@@ -237,6 +237,8 @@ class RVMReader
          * @param color - The new color values to be set.
          */
         DLL_PMUC_EXPORT virtual void updateColorPalette(std::uint32_t index, const std::array<std::uint8_t, 4>& color) {
+          (void)index;
+          (void)color;
         }
 
         /**
